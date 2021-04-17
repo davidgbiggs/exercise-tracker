@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
-const TIMEOUT = 300000;
+const TIMEOUT = 10000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 

@@ -2,24 +2,10 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 
-const options = {
-  server: {
-    socketOptions: {
-      keepAlive: 300000,
-      connectTimeoutMS: 30000,
-    },
-  },
-  replset: {
-    socketOptions: {
-      keepAlive: 300000,
-      connectTimeoutMS: 30000,
-    },
-  },
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-};
-
-mongoose.connect(process.env.MONGO_URI, options);
+});
 
 const userSchema = new mongoose.Schema({
   username: String,
